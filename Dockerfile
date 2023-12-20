@@ -1,5 +1,6 @@
 # 基于 ubuntu-latest 镜像
 FROM node:16-bullseye
+# FROM --platform=$BUILDPLATFORM node:16-bullseye as builder
 
 ARG TARGETARCH
 
@@ -9,10 +10,10 @@ RUN apt-get update && apt-get install -y \
     git \
     rsync
 
-# 安装 go 1.18
-RUN curl -LO https://go.dev/dl/go1.18.linux-${TARGETARCH}.tar.gz
-RUN tar -C /usr/local -xzf go1.18.linux-${TARGETARCH}.tar.gz
-RUN rm go1.18.linux-${TARGETARCH}.tar.gz
+# 安装 go 1.20
+RUN curl -LO https://go.dev/dl/go1.20.linux-${TARGETARCH}.tar.gz
+RUN tar -C /usr/local -xzf go1.20.linux-${TARGETARCH}.tar.gz
+RUN rm go1.20.linux-${TARGETARCH}.tar.gz
 
 # 设置环境变量
 ENV PATH=$PATH:/usr/local/go/bin:/root/go/bin
