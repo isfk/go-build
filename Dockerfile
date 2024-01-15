@@ -9,9 +9,9 @@ RUN apt-get update && apt-get install -y \
     rsync
 
 # 安装 go 1.21
-RUN curl -LO https://go.dev/dl/go1.21.5.linux-${TARGETARCH}.tar.gz
-RUN tar -C /usr/local -xzf go1.21.5.linux-${TARGETARCH}.tar.gz
-RUN rm go1.21.5.linux-${TARGETARCH}.tar.gz
+RUN curl -LO https://go.dev/dl/go1.21.6.linux-${TARGETARCH}.tar.gz
+RUN tar -C /usr/local -xzf go1.21.6.linux-${TARGETARCH}.tar.gz
+RUN rm go1.21.6.linux-${TARGETARCH}.tar.gz
 
 # 设置环境变量
 ENV PATH=$PATH:/usr/local/go/bin:/root/go/bin
