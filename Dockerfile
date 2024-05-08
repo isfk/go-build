@@ -6,7 +6,8 @@ ARG TARGETARCH
 RUN apt-get update && apt-get install -y \
     curl \
     git \
-    rsync
+    rsync \
+    xz-utils
 
 # 安装 go 1.21
 RUN curl -LO https://go.dev/dl/go1.22.0.linux-${TARGETARCH}.tar.gz
