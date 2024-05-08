@@ -10,8 +10,7 @@ RUN apt-get update && apt-get install -y \
     curl \
     git \
     rsync \
-    xz-utils \
-    bzip2
+    xz-utils
 
 # 安装 rice
 RUN go install github.com/GeertJohan/go.rice/rice@latest
