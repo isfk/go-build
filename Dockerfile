@@ -16,8 +16,8 @@ RUN apt-get update && apt-get install -y \
 RUN go install github.com/GeertJohan/go.rice/rice@latest
 
 # 安装 upx
-RUN curl -LO https://github.com/upx/upx/releases/download/v4.2.4/upx-4.2.4-${TARGETARCH}_linux.tar.xz
-RUN tar xvJf upx-4.2.4-${TARGETARCH}_linux.tar.xz -C /usr/bin --strip-components=1 upx-4.2.4-${TARGETARCH}_linux/upx
+RUN curl -LO https://github.com/upx/upx/releases/download/v5.0.1/upx-5.0.1-${TARGETARCH}_linux.tar.xz
+RUN tar xvJf upx-5.0.1-${TARGETARCH}_linux.tar.xz -C /usr/bin --strip-components=1 upx-5.0.1-${TARGETARCH}_linux/upx
 
 # 设置环境变量
 ENV PATH=$PATH:/usr/local/go/bin:/root/go/bin
