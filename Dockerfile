@@ -2,6 +2,8 @@ FROM golang:1.24
 
 ARG TARGETARCH
 
+VOLUME [ "/data/go_pkg", "/go/pkg" ]
+
 COPY sources.list /etc/apt/sources.list
 
 # 更新软件源并安装必要的依赖
