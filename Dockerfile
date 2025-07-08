@@ -23,6 +23,12 @@ RUN tar xvJf upx-5.0.1-${TARGETARCH}_linux.tar.xz -C /usr/bin --strip-components
 ENV PATH=$PATH:/usr/local/go/bin:/root/go/bin
 ENV GOPROXY=https://goproxy.io,direct
 
-# 安装 nodejs20
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
-    RUN apt-get install -y nodejs
+# 安装 node 24
+RUN curl -fsSL https://deb.nodesource.com/setup_24.x | bash -
+RUN apt-get install -y nodejs
+
+# 配置 npm 镜像
+RUN npm config set registry https://mirrors.huaweicloud.com/repository/npm/
+
+# 安装 pnpm
+RUN npm install -g pnpm
