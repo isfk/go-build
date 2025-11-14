@@ -21,7 +21,7 @@ RUN tar xvJf upx-5.0.1-${TARGETARCH}_linux.tar.xz -C /usr/bin --strip-components
 
 # 设置环境变量
 ENV PATH=$PATH:/usr/local/go/bin:/root/go/bin
-ENV GOPROXY=https://goproxy.io,direct
+ENV GOPROXY=https://mirrors.huaweicloud.com/repository/goproxy/,direct
 
 # 安装 node 24
 RUN curl -fsSL https://deb.nodesource.com/setup_24.x | bash -
