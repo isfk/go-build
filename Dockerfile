@@ -2,7 +2,7 @@ FROM golang:1.24
 
 ARG TARGETARCH
 
-COPY sources.list /etc/apt/sources.list
+RUN sed -i 's/deb.debian.org/mirrors.huaweicloud.com/g' /etc/apt/sources.list.d/debian.sources
 
 # 更新软件源并安装必要的依赖
 RUN apt-get update && apt-get install -y \
